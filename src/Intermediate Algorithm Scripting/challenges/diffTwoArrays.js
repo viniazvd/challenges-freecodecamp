@@ -6,7 +6,7 @@ const diffArray = (array1, array2) => {
 
   return biggest(array1, array2).reduce((acc, cur) => {
     let find = smallest(array1, array2).find(x => x === cur)
-    if (!find) acc.push(cur)
+    if (!find) acc = acc.concat(cur)
 
     return acc
   }, [])
