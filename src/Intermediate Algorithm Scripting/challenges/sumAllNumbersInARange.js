@@ -1,6 +1,7 @@
 const sumAll = array => {
-  const min = Math.min(array[0], array[1])
-  const max = Math.max(array[0], array[1])
+  const min = Math.min(...array)
+  const max = Math.max(...array)
+
   const range = (min, max) =>
     [...Array(max - min + 1)]
       .map((value, index) => min + index)
