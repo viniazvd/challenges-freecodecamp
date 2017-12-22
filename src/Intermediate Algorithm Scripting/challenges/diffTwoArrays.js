@@ -1,15 +1,12 @@
-const len = require('../utils/len')
-
-const diffArray = (array1, array2) => {
-  const biggest = (x, y) => len(x) > len(y) ? x : y
-  const smallest = (x, y) => len(x) < len(y) ? x : y
-
-  return biggest(array1, array2).reduce((acc, cur) => {
-    let find = smallest(array1, array2).find(x => x === cur)
-    if (!find) acc = acc.concat(cur)
-
-    return acc
-  }, [])
+const repeated = (el, index, arr) => {
+  if (arr.slice(index + 1).indexOf(el) === -1 &&
+      arr.slice(0, index).indexOf(el) === -1) {
+    return el
+  }
 }
 
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]))
+const diffArray = (array1, array2) => {
+  return [...array1, ...array2].filter(repeated)
+}
+
+console.log(diffArray([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]))
