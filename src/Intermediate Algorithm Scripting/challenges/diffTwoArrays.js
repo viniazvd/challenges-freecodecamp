@@ -1,12 +1,8 @@
-const repeated = (el, index, arr) => {
-  if (arr.slice(index + 1).indexOf(el) === -1 &&
-      arr.slice(0, index).indexOf(el) === -1) {
-    return el
-  }
-}
+const notRepeated = (x, y) => (x && !y) || (!x && y)
 
 const diffArray = (array1, array2) => {
-  return [...array1, ...array2].filter(repeated)
+  return [...array1, ...array2]
+    .filter(el => notRepeated(array1.includes(el), array2.includes(el)))
 }
 
-console.log(diffArray([1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]))
+module.exports = diffArray
