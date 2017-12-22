@@ -9,3 +9,6 @@
 
 # Wherefore art thou
 -https://www.freecodecamp.org/challenges/wherefore-art-thou
+
+# Missing letters
+-https://www.freecodecamp.org/challenges/missing-letters
